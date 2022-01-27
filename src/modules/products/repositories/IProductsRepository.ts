@@ -7,6 +7,7 @@ interface IProductsRepository {
     findById(id: string): Promise<Product>;
     findByName(name: string): Promise<Product[]>;
     findByPrice(price: number): Promise<Product[]>;
+    listAll(): Promise<Product[]>;
 }
 
 export { IProductsRepository }

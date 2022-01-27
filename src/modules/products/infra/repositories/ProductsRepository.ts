@@ -17,12 +17,12 @@ class ProductsRepository implements IProductsRepository {
             price,
             stock
         });
-
+        
         await this.repository.save(product);
-
+        
         return product;
     }
-
+    
     async findById(id: string): Promise<Product> {
         return await this.repository.findOne(id);
     }
@@ -33,6 +33,10 @@ class ProductsRepository implements IProductsRepository {
 
     async findByPrice(price: number): Promise<Product[]> {
         return await this.repository.find({ price });
+    }
+
+    async listAll(): Promise<Product[]> {
+        return await this.repository.find();
     }
 }
 
