@@ -11,7 +11,7 @@ class ProductsRepository implements IProductsRepository {
         this.repository = getRepository(Product);
     }
     
-    async create({ name, price, stock }: ICreateProductDTO): Promise<void> {
+    async create({ name, price, stock }: ICreateProductDTO): Promise<Product> {
         const product = this.repository.create({
             name,
             price,
@@ -19,6 +19,8 @@ class ProductsRepository implements IProductsRepository {
         });
 
         await this.repository.save(product);
+
+        return product;
     }
 
     async findById(id: string): Promise<Product> {
