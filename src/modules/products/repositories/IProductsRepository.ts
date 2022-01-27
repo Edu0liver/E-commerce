@@ -5,7 +5,8 @@ import { Product } from "../infra/entities/Product";
 interface IProductsRepository {
     create({ name, price, stock }: ICreateProductDTO): Promise<Product>;
     findById(id: string): Promise<Product>;
-    findByName(name: string): Promise<Product>;
+    findByName(name: string): Promise<Product[]>;
+    findByPrice(price: number): Promise<Product[]>;
 }
 
 export { IProductsRepository }
