@@ -1,4 +1,4 @@
-import { Column, Entity, ManyToOne, PrimaryColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, ManyToOne, PrimaryColumn } from 'typeorm';
 import { v4 as uuidV4 } from 'uuid';
 import { Order } from '../../../order/infra/entities/Order';
 
@@ -17,8 +17,8 @@ class Product {
     @Column()
     stock: number;
 
-    @ManyToOne(() => Order, order => order.products)
-    order: Order;
+    @CreateDateColumn()
+    created_at: Date;
 
     constructor(){
         if(!this.id){

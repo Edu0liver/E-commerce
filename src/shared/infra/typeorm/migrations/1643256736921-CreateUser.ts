@@ -29,6 +29,15 @@ export class CreateUser1643256736921 implements MigrationInterface {
                         name: "admin",
                         type: "boolean"
                     },
+                    {
+                        name: "address",
+                        type: "varchar"
+                    },
+                    {
+                        name: "created_at",
+                        type: "timestamp",
+                        default: "now()"
+                    },
                 ]
             })
         )
