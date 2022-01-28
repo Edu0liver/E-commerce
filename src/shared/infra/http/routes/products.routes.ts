@@ -12,7 +12,7 @@ const listProductsController = new ListProductsController();
 const listAllProductsController = new ListAllProductsController();
 
 productsRoutes.post("/", ensureAuthenticated, ensureAdmin, createProductController.handle);
-productsRoutes.post("/filter", listProductsController.handle);
-productsRoutes.post("/all", listAllProductsController.handle);
+productsRoutes.get("/filter", listProductsController.handle);
+productsRoutes.get("/all", listAllProductsController.handle);
 
 export { productsRoutes };
