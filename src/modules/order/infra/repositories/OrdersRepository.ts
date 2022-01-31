@@ -16,6 +16,12 @@ class OrdersRepository implements IOrdersRepository {
         const order = this.repository.create({ user_id, product_id });
         await this.repository.save(order);
     }
+
+    async listOrder(user_id: string, product_id: string): Promise<Order> {
+        const order = await this.repository.findOne({ user_id, product_id });
+        return order;
+    }
+
     async listOrdersByUser(user_id: string): Promise<Order[]> {
         const orders = await this.repository.find({ user_id })
         return orders;
