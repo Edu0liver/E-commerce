@@ -11,7 +11,7 @@ class CreateUserService {
         private usersRepository: IUsersRepository
     ){}
 
-    async execute({ email, address, password, name }: ICreateUserDTO): Promise<void> {
+    async execute({ email, address, password, name, cep }: ICreateUserDTO): Promise<void> {
         const userExists = await this.usersRepository.findByEmail(email);
         const passwordHash = await hash(password, 8);
 
@@ -24,6 +24,7 @@ class CreateUserService {
             email,
             address,
             password: passwordHash,
+            cep
         });
     }
 }

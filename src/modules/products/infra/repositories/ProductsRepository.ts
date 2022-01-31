@@ -11,11 +11,16 @@ class ProductsRepository implements IProductsRepository {
         this.repository = getRepository(Product);
     }
     
-    async create({ name, price, stock }: ICreateProductDTO): Promise<Product> {
+    async create({ name, price, stock, width, height, length, weight, diameter }: ICreateProductDTO): Promise<Product> {
         const product = this.repository.create({
             name,
             price,
-            stock
+            stock,
+            width,
+            height,
+            length,
+            weight,
+            diameter,
         });
         
         await this.repository.save(product);

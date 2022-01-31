@@ -22,6 +22,9 @@ class User {
     @Column()
     address: string;
 
+    @Column()
+    cep: string;
+
     @CreateDateColumn()
     created_at: Date;
 

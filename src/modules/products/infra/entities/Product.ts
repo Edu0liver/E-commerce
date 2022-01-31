@@ -16,7 +16,22 @@ class Product {
 
     @Column()
     stock: number;
+    
+    @Column()
+    weight: number;
 
+    @Column()
+    length: number;
+
+    @Column()
+    height: number;
+
+    @Column()
+    width: number;
+
+    @Column()
+    diameter: number;
+    
     @CreateDateColumn()
     created_at: Date;
 

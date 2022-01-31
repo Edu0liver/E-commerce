@@ -6,6 +6,7 @@ interface IOrdersRepository {
     create({ user_id, product_id }: ICreateOrderDTO): Promise<void>;
     listOrder(user_id: string, product_id: string): Promise<Order>
     listOrdersByUser(user_id: string): Promise<Order[]>
+    deleteOrder(order_id: string): Promise<void>
 }
 
 export { IOrdersRepository };

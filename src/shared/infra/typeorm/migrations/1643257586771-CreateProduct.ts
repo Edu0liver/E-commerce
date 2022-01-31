@@ -25,6 +25,26 @@ export class CreateProduct1643257586771 implements MigrationInterface {
                         type: "integer"
                     },
                     {
+                        name: "weight",
+                        type: "integer"
+                    },
+                    {
+                        name: "length",
+                        type: "integer"
+                    },
+                    {
+                        name: "height",
+                        type: "integer"
+                    },
+                    {
+                        name: "width",
+                        type: "integer"
+                    },
+                    {
+                        name: "diameter",
+                        type: "integer"
+                    },
+                    {
                         name: "created_at",
                         type: "timestamp",
                         default: "now()"

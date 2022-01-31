@@ -11,6 +11,7 @@
     "bcrypt": "^5.0.1",
     "dayjs": "^1.10.7",
     "express": "^4.17.2",
+    "frete": "^0.4.4",
     "jsonwebtoken": "^8.5.1",
     "tsyringe": "^4.6.0",
     "uuid": "^8.3.2"

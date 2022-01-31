@@ -5,6 +5,7 @@ interface ICreateUserDTO {
     address: string;
     email: string;
     password: string;
+    cep: string;
 }
 
 export { ICreateUserDTO }

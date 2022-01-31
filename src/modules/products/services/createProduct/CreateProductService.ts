@@ -11,8 +11,8 @@ class CreateProductService {
         private productsRepository: IProductsRepository
     ){}
 
-    async execute({ name, price, stock}: ICreateProductDTO): Promise<Product> {
-        return await this.productsRepository.create({ name, price, stock });
+    async execute({ name, price, stock, width, height, length, weight, diameter }: ICreateProductDTO): Promise<Product> {
+        return await this.productsRepository.create({ name, price, stock, width, height, length, weight, diameter });
     }
 }
 
